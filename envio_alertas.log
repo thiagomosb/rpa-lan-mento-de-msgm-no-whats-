@@ -1,0 +1,492 @@
+2025-06-03 15:30:02,573 \u2705 Mensagem enviada para 5574988214340
+2025-06-03 15:32:07,319 \u2705 Mensagem enviada para 5574988214340
+2025-06-03 15:35:00,219 \u2705 Mensagem enviada para 5574988214340
+2025-06-03 15:40:00,811 package: mysql.connector.plugins
+2025-06-03 15:40:00,811 plugin_name: mysql_native_password
+2025-06-03 15:40:00,811 AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2025-06-03 15:44:23,046 \u2705 Mensagem enviada para 5574988214340
+2025-06-03 15:51:53,031 \u2705 Mensagem enviada para 5574988214340
+2025-06-03 15:54:07,167 \u2705 Mensagem enviada para 5574988214340
+2025-06-03 16:08:13,001 \u2705 Mensagem enviada para 5574988214340
+2025-06-03 16:08:22,370 \u2705 Mensagem enviada para +5561984498647
+2025-06-03 16:54:39,245 \u2705 Mensagem enviada para 5574988214340
+2025-06-03 16:54:48,607 \u2705 Mensagem enviada para 5561984498647
+2025-06-03 17:01:14,285 \u2705 Mensagem enviada para 5574988214340
+2025-06-03 17:01:24,256 \u2705 Mensagem enviada para 5561984498647
+2025-06-04 08:31:25,425 \u2705 Mensagem enviada para 5562984181348
+2025-06-04 08:31:34,397 \u2705 Mensagem enviada para 5562984181348
+2025-06-04 08:31:43,461 \u2705 Mensagem enviada para 5562984181348
+2025-06-04 08:31:52,388 \u2705 Mensagem enviada para 5564992036619
+2025-06-04 08:32:01,536 \u2705 Mensagem enviada para 556499289259
+2025-06-04 08:32:10,621 \u2705 Mensagem enviada para 5522998014657
+2025-06-04 08:32:19,674 \u2705 Mensagem enviada para 5564996053541
+2025-06-04 08:32:28,742 \u2705 Mensagem enviada para 5562996969822
+2025-06-04 08:33:03,602 \u2705 Mensagem enviada para 5562996234005
+2025-06-04 08:33:37,670 \u2705 Mensagem enviada para 556299988931
+2025-06-04 08:33:46,908 \u2705 Mensagem enviada para 5562994419339
+2025-06-04 08:34:21,900 \u2705 Mensagem enviada para 5565998030382
+2025-06-04 08:34:31,043 \u2705 Mensagem enviada para 5565998030382
+2025-06-04 08:35:06,449 \u2705 Mensagem enviada para 5565998030382
+2025-06-04 08:35:40,881 \u2705 Mensagem enviada para 5565998030382
+2025-06-04 09:12:37,619 \u2705 Mensagem enviada para +5574988214340
+2025-06-04 09:12:47,462 \u2705 Mensagem enviada para +5574988214340
+2025-06-04 09:13:42,622 \u2705 Mensagem enviada para +5574988214340
+2025-06-04 09:17:11,164 \u2705 Mensagem enviada para +5574988214340
+2025-06-04 09:35:09,030 \u2705 Mensagem enviada para 5574988214340
+2025-06-04 09:37:15,347 \u2705 Mensagem enviada para 5574988214340
+2025-06-04 16:11:33,920 \u2705 Mensagem enviada para 5574988214340
+2025-07-07 15:37:37,272 \u2705 Mensagem enviada para 5574988214340
+2025-07-07 15:40:31,743 \u2705 Mensagem enviada para 5574988214340
+2025-07-07 15:40:57,134 \u2705 Mensagem enviada para 5562984181348
+2025-07-07 15:41:05,801 \u2705 Mensagem enviada para 5562984181348
+2025-07-07 15:41:13,884 \u2705 Mensagem enviada para 5562984181348
+2025-07-07 15:41:54,152 \u2705 Mensagem enviada para 5564992036619
+2025-07-07 15:42:02,825 \u2705 Mensagem enviada para 5564992036619
+2025-07-07 15:42:58,132 \u2705 Mensagem enviada para 5522998014657
+2025-07-07 15:43:35,037 \u2705 Mensagem enviada para 5562996969822
+2025-07-07 15:44:05,448 \u274c Erro ao enviar mensagem para 5562996234005: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=137.0.7151.120); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff767bccda5+78885]
+	GetHandleVerifier [0x0x7ff767bcce00+78976]
+	(No symbol) [0x0x7ff767989bca]
+	(No symbol) [0x0x7ff7679759b5]
+	(No symbol) [0x0x7ff76799a9ca]
+	(No symbol) [0x0x7ff767a105e5]
+	(No symbol) [0x0x7ff767a30b42]
+	(No symbol) [0x0x7ff767a08963]
+	(No symbol) [0x0x7ff7679d16b1]
+	(No symbol) [0x0x7ff7679d2443]
+	GetHandleVerifier [0x0x7ff767ea4eed+3061101]
+	GetHandleVerifier [0x0x7ff767e9f33d+3037629]
+	GetHandleVerifier [0x0x7ff767ebe592+3165202]
+	GetHandleVerifier [0x0x7ff767be730e+186766]
+	GetHandleVerifier [0x0x7ff767beeb3f+217535]
+	GetHandleVerifier [0x0x7ff767bd59b4+114740]
+	GetHandleVerifier [0x0x7ff767bd5b69+115177]
+	GetHandleVerifier [0x0x7ff767bbc368+10728]
+	BaseThreadInitThunk [0x0x7ff9d739e8d7+23]
+	RtlUserThreadStart [0x0x7ff9d88ffbcc+44]
+
+2025-07-07 15:44:05,454 \u274c Erro ao enviar mensagem para 556299988931: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff767bccda5+78885]
+	GetHandleVerifier [0x0x7ff767bcce00+78976]
+	(No symbol) [0x0x7ff7679899fc]
+	(No symbol) [0x0x7ff7679d07df]
+	(No symbol) [0x0x7ff767a08a52]
+	(No symbol) [0x0x7ff767a03413]
+	(No symbol) [0x0x7ff767a024d9]
+	(No symbol) [0x0x7ff767955d55]
+	GetHandleVerifier [0x0x7ff767ea4eed+3061101]
+	GetHandleVerifier [0x0x7ff767e9f33d+3037629]
+	GetHandleVerifier [0x0x7ff767ebe592+3165202]
+	GetHandleVerifier [0x0x7ff767be730e+186766]
+	GetHandleVerifier [0x0x7ff767beeb3f+217535]
+	(No symbol) [0x0x7ff767954dca]
+	GetHandleVerifier [0x0x7ff767fc45e8+4238440]
+	BaseThreadInitThunk [0x0x7ff9d739e8d7+23]
+	RtlUserThreadStart [0x0x7ff9d88ffbcc+44]
+
+2025-07-07 15:44:05,479 \u274c Erro ao enviar mensagem para 5562994419339: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff767bccda5+78885]
+	GetHandleVerifier [0x0x7ff767bcce00+78976]
+	(No symbol) [0x0x7ff7679899fc]
+	(No symbol) [0x0x7ff7679d07df]
+	(No symbol) [0x0x7ff767a08a52]
+	(No symbol) [0x0x7ff767a03413]
+	(No symbol) [0x0x7ff767a024d9]
+	(No symbol) [0x0x7ff767955d55]
+	GetHandleVerifier [0x0x7ff767ea4eed+3061101]
+	GetHandleVerifier [0x0x7ff767e9f33d+3037629]
+	GetHandleVerifier [0x0x7ff767ebe592+3165202]
+	GetHandleVerifier [0x0x7ff767be730e+186766]
+	GetHandleVerifier [0x0x7ff767beeb3f+217535]
+	(No symbol) [0x0x7ff767954dca]
+	GetHandleVerifier [0x0x7ff767fc45e8+4238440]
+	BaseThreadInitThunk [0x0x7ff9d739e8d7+23]
+	RtlUserThreadStart [0x0x7ff9d88ffbcc+44]
+
+2025-07-07 15:44:05,487 \u274c Erro ao enviar mensagem para 5565998030382: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff767bccda5+78885]
+	GetHandleVerifier [0x0x7ff767bcce00+78976]
+	(No symbol) [0x0x7ff7679899fc]
+	(No symbol) [0x0x7ff7679d07df]
+	(No symbol) [0x0x7ff767a08a52]
+	(No symbol) [0x0x7ff767a03413]
+	(No symbol) [0x0x7ff767a024d9]
+	(No symbol) [0x0x7ff767955d55]
+	GetHandleVerifier [0x0x7ff767ea4eed+3061101]
+	GetHandleVerifier [0x0x7ff767e9f33d+3037629]
+	GetHandleVerifier [0x0x7ff767ebe592+3165202]
+	GetHandleVerifier [0x0x7ff767be730e+186766]
+	GetHandleVerifier [0x0x7ff767beeb3f+217535]
+	(No symbol) [0x0x7ff767954dca]
+	GetHandleVerifier [0x0x7ff767fc45e8+4238440]
+	BaseThreadInitThunk [0x0x7ff9d739e8d7+23]
+	RtlUserThreadStart [0x0x7ff9d88ffbcc+44]
+
+2025-07-07 15:44:05,494 \u274c Erro ao enviar mensagem para 556284050546: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff767bccda5+78885]
+	GetHandleVerifier [0x0x7ff767bcce00+78976]
+	(No symbol) [0x0x7ff7679899fc]
+	(No symbol) [0x0x7ff7679d07df]
+	(No symbol) [0x0x7ff767a08a52]
+	(No symbol) [0x0x7ff767a03413]
+	(No symbol) [0x0x7ff767a024d9]
+	(No symbol) [0x0x7ff767955d55]
+	GetHandleVerifier [0x0x7ff767ea4eed+3061101]
+	GetHandleVerifier [0x0x7ff767e9f33d+3037629]
+	GetHandleVerifier [0x0x7ff767ebe592+3165202]
+	GetHandleVerifier [0x0x7ff767be730e+186766]
+	GetHandleVerifier [0x0x7ff767beeb3f+217535]
+	(No symbol) [0x0x7ff767954dca]
+	GetHandleVerifier [0x0x7ff767fc45e8+4238440]
+	BaseThreadInitThunk [0x0x7ff9d739e8d7+23]
+	RtlUserThreadStart [0x0x7ff9d88ffbcc+44]
+
+2025-07-07 15:44:05,513 \u274c Erro ao enviar mensagem para 556284050546: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff767bccda5+78885]
+	GetHandleVerifier [0x0x7ff767bcce00+78976]
+	(No symbol) [0x0x7ff7679899fc]
+	(No symbol) [0x0x7ff7679d07df]
+	(No symbol) [0x0x7ff767a08a52]
+	(No symbol) [0x0x7ff767a03413]
+	(No symbol) [0x0x7ff767a024d9]
+	(No symbol) [0x0x7ff767955d55]
+	GetHandleVerifier [0x0x7ff767ea4eed+3061101]
+	GetHandleVerifier [0x0x7ff767e9f33d+3037629]
+	GetHandleVerifier [0x0x7ff767ebe592+3165202]
+	GetHandleVerifier [0x0x7ff767be730e+186766]
+	GetHandleVerifier [0x0x7ff767beeb3f+217535]
+	(No symbol) [0x0x7ff767954dca]
+	GetHandleVerifier [0x0x7ff767fc45e8+4238440]
+	BaseThreadInitThunk [0x0x7ff9d739e8d7+23]
+	RtlUserThreadStart [0x0x7ff9d88ffbcc+44]
+
+2025-07-07 15:44:05,534 \u274c Erro ao enviar mensagem para 556284050546: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff767bccda5+78885]
+	GetHandleVerifier [0x0x7ff767bcce00+78976]
+	(No symbol) [0x0x7ff7679899fc]
+	(No symbol) [0x0x7ff7679d07df]
+	(No symbol) [0x0x7ff767a08a52]
+	(No symbol) [0x0x7ff767a03413]
+	(No symbol) [0x0x7ff767a024d9]
+	(No symbol) [0x0x7ff767955d55]
+	GetHandleVerifier [0x0x7ff767ea4eed+3061101]
+	GetHandleVerifier [0x0x7ff767e9f33d+3037629]
+	GetHandleVerifier [0x0x7ff767ebe592+3165202]
+	GetHandleVerifier [0x0x7ff767be730e+186766]
+	GetHandleVerifier [0x0x7ff767beeb3f+217535]
+	(No symbol) [0x0x7ff767954dca]
+	GetHandleVerifier [0x0x7ff767fc45e8+4238440]
+	BaseThreadInitThunk [0x0x7ff9d739e8d7+23]
+	RtlUserThreadStart [0x0x7ff9d88ffbcc+44]
+
+2025-07-07 15:47:13,987 \u2705 Mensagem enviada para 5574988214340
+2025-07-07 15:47:21,936 \u2705 Mensagem enviada para 5564992036619
+2025-07-07 15:47:29,898 \u2705 Mensagem enviada para 5564992036619
+2025-07-07 15:47:29,907 \u274c Erro ao enviar mensagem para 5522998014657: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=137.0.7151.120); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff767bccda5+78885]
+	GetHandleVerifier [0x0x7ff767bcce00+78976]
+	(No symbol) [0x0x7ff767989bca]
+	(No symbol) [0x0x7ff7679759b5]
+	(No symbol) [0x0x7ff76799a9ca]
+	(No symbol) [0x0x7ff767a105e5]
+	(No symbol) [0x0x7ff767a30b42]
+	(No symbol) [0x0x7ff767a08963]
+	(No symbol) [0x0x7ff7679d16b1]
+	(No symbol) [0x0x7ff7679d2443]
+	GetHandleVerifier [0x0x7ff767ea4eed+3061101]
+	GetHandleVerifier [0x0x7ff767e9f33d+3037629]
+	GetHandleVerifier [0x0x7ff767ebe592+3165202]
+	GetHandleVerifier [0x0x7ff767be730e+186766]
+	GetHandleVerifier [0x0x7ff767beeb3f+217535]
+	GetHandleVerifier [0x0x7ff767bd59b4+114740]
+	GetHandleVerifier [0x0x7ff767bd5b69+115177]
+	GetHandleVerifier [0x0x7ff767bbc368+10728]
+	BaseThreadInitThunk [0x0x7ff9d739e8d7+23]
+	RtlUserThreadStart [0x0x7ff9d88ffbcc+44]
+
+2025-07-07 15:47:29,924 \u274c Erro ao enviar mensagem para 5562996969822: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff767bccda5+78885]
+	GetHandleVerifier [0x0x7ff767bcce00+78976]
+	(No symbol) [0x0x7ff7679899fc]
+	(No symbol) [0x0x7ff7679d07df]
+	(No symbol) [0x0x7ff767a08a52]
+	(No symbol) [0x0x7ff767a03413]
+	(No symbol) [0x0x7ff767a024d9]
+	(No symbol) [0x0x7ff767955d55]
+	GetHandleVerifier [0x0x7ff767ea4eed+3061101]
+	GetHandleVerifier [0x0x7ff767e9f33d+3037629]
+	GetHandleVerifier [0x0x7ff767ebe592+3165202]
+	GetHandleVerifier [0x0x7ff767be730e+186766]
+	GetHandleVerifier [0x0x7ff767beeb3f+217535]
+	(No symbol) [0x0x7ff767954dca]
+	GetHandleVerifier [0x0x7ff767fc45e8+4238440]
+	BaseThreadInitThunk [0x0x7ff9d739e8d7+23]
+	RtlUserThreadStart [0x0x7ff9d88ffbcc+44]
+
+2025-07-07 15:47:29,932 \u274c Erro ao enviar mensagem para 5562996234005: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff767bccda5+78885]
+	GetHandleVerifier [0x0x7ff767bcce00+78976]
+	(No symbol) [0x0x7ff7679899fc]
+	(No symbol) [0x0x7ff7679d07df]
+	(No symbol) [0x0x7ff767a08a52]
+	(No symbol) [0x0x7ff767a03413]
+	(No symbol) [0x0x7ff767a024d9]
+	(No symbol) [0x0x7ff767955d55]
+	GetHandleVerifier [0x0x7ff767ea4eed+3061101]
+	GetHandleVerifier [0x0x7ff767e9f33d+3037629]
+	GetHandleVerifier [0x0x7ff767ebe592+3165202]
+	GetHandleVerifier [0x0x7ff767be730e+186766]
+	GetHandleVerifier [0x0x7ff767beeb3f+217535]
+	(No symbol) [0x0x7ff767954dca]
+	GetHandleVerifier [0x0x7ff767fc45e8+4238440]
+	BaseThreadInitThunk [0x0x7ff9d739e8d7+23]
+	RtlUserThreadStart [0x0x7ff9d88ffbcc+44]
+
+2025-07-07 15:47:29,938 \u274c Erro ao enviar mensagem para 556299988931: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff767bccda5+78885]
+	GetHandleVerifier [0x0x7ff767bcce00+78976]
+	(No symbol) [0x0x7ff7679899fc]
+	(No symbol) [0x0x7ff7679d07df]
+	(No symbol) [0x0x7ff767a08a52]
+	(No symbol) [0x0x7ff767a03413]
+	(No symbol) [0x0x7ff767a024d9]
+	(No symbol) [0x0x7ff767955d55]
+	GetHandleVerifier [0x0x7ff767ea4eed+3061101]
+	GetHandleVerifier [0x0x7ff767e9f33d+3037629]
+	GetHandleVerifier [0x0x7ff767ebe592+3165202]
+	GetHandleVerifier [0x0x7ff767be730e+186766]
+	GetHandleVerifier [0x0x7ff767beeb3f+217535]
+	(No symbol) [0x0x7ff767954dca]
+	GetHandleVerifier [0x0x7ff767fc45e8+4238440]
+	BaseThreadInitThunk [0x0x7ff9d739e8d7+23]
+	RtlUserThreadStart [0x0x7ff9d88ffbcc+44]
+
+2025-07-07 15:47:29,945 \u274c Erro ao enviar mensagem para 5562994419339: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff767bccda5+78885]
+	GetHandleVerifier [0x0x7ff767bcce00+78976]
+	(No symbol) [0x0x7ff7679899fc]
+	(No symbol) [0x0x7ff7679d07df]
+	(No symbol) [0x0x7ff767a08a52]
+	(No symbol) [0x0x7ff767a03413]
+	(No symbol) [0x0x7ff767a024d9]
+	(No symbol) [0x0x7ff767955d55]
+	GetHandleVerifier [0x0x7ff767ea4eed+3061101]
+	GetHandleVerifier [0x0x7ff767e9f33d+3037629]
+	GetHandleVerifier [0x0x7ff767ebe592+3165202]
+	GetHandleVerifier [0x0x7ff767be730e+186766]
+	GetHandleVerifier [0x0x7ff767beeb3f+217535]
+	(No symbol) [0x0x7ff767954dca]
+	GetHandleVerifier [0x0x7ff767fc45e8+4238440]
+	BaseThreadInitThunk [0x0x7ff9d739e8d7+23]
+	RtlUserThreadStart [0x0x7ff9d88ffbcc+44]
+
+2025-07-07 15:47:29,951 \u274c Erro ao enviar mensagem para 5565998030382: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff767bccda5+78885]
+	GetHandleVerifier [0x0x7ff767bcce00+78976]
+	(No symbol) [0x0x7ff7679899fc]
+	(No symbol) [0x0x7ff7679d07df]
+	(No symbol) [0x0x7ff767a08a52]
+	(No symbol) [0x0x7ff767a03413]
+	(No symbol) [0x0x7ff767a024d9]
+	(No symbol) [0x0x7ff767955d55]
+	GetHandleVerifier [0x0x7ff767ea4eed+3061101]
+	GetHandleVerifier [0x0x7ff767e9f33d+3037629]
+	GetHandleVerifier [0x0x7ff767ebe592+3165202]
+	GetHandleVerifier [0x0x7ff767be730e+186766]
+	GetHandleVerifier [0x0x7ff767beeb3f+217535]
+	(No symbol) [0x0x7ff767954dca]
+	GetHandleVerifier [0x0x7ff767fc45e8+4238440]
+	BaseThreadInitThunk [0x0x7ff9d739e8d7+23]
+	RtlUserThreadStart [0x0x7ff9d88ffbcc+44]
+
+2025-07-07 15:47:29,956 \u274c Erro ao enviar mensagem para 556284050546: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff767bccda5+78885]
+	GetHandleVerifier [0x0x7ff767bcce00+78976]
+	(No symbol) [0x0x7ff7679899fc]
+	(No symbol) [0x0x7ff7679d07df]
+	(No symbol) [0x0x7ff767a08a52]
+	(No symbol) [0x0x7ff767a03413]
+	(No symbol) [0x0x7ff767a024d9]
+	(No symbol) [0x0x7ff767955d55]
+	GetHandleVerifier [0x0x7ff767ea4eed+3061101]
+	GetHandleVerifier [0x0x7ff767e9f33d+3037629]
+	GetHandleVerifier [0x0x7ff767ebe592+3165202]
+	GetHandleVerifier [0x0x7ff767be730e+186766]
+	GetHandleVerifier [0x0x7ff767beeb3f+217535]
+	(No symbol) [0x0x7ff767954dca]
+	GetHandleVerifier [0x0x7ff767fc45e8+4238440]
+	BaseThreadInitThunk [0x0x7ff9d739e8d7+23]
+	RtlUserThreadStart [0x0x7ff9d88ffbcc+44]
+
+2025-07-07 15:47:29,985 \u274c Erro ao enviar mensagem para 556284050546: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff767bccda5+78885]
+	GetHandleVerifier [0x0x7ff767bcce00+78976]
+	(No symbol) [0x0x7ff7679899fc]
+	(No symbol) [0x0x7ff7679d07df]
+	(No symbol) [0x0x7ff767a08a52]
+	(No symbol) [0x0x7ff767a03413]
+	(No symbol) [0x0x7ff767a024d9]
+	(No symbol) [0x0x7ff767955d55]
+	GetHandleVerifier [0x0x7ff767ea4eed+3061101]
+	GetHandleVerifier [0x0x7ff767e9f33d+3037629]
+	GetHandleVerifier [0x0x7ff767ebe592+3165202]
+	GetHandleVerifier [0x0x7ff767be730e+186766]
+	GetHandleVerifier [0x0x7ff767beeb3f+217535]
+	(No symbol) [0x0x7ff767954dca]
+	GetHandleVerifier [0x0x7ff767fc45e8+4238440]
+	BaseThreadInitThunk [0x0x7ff9d739e8d7+23]
+	RtlUserThreadStart [0x0x7ff9d88ffbcc+44]
+
+2025-07-07 15:47:30,016 \u274c Erro ao enviar mensagem para 556284050546: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff767bccda5+78885]
+	GetHandleVerifier [0x0x7ff767bcce00+78976]
+	(No symbol) [0x0x7ff7679899fc]
+	(No symbol) [0x0x7ff7679d07df]
+	(No symbol) [0x0x7ff767a08a52]
+	(No symbol) [0x0x7ff767a03413]
+	(No symbol) [0x0x7ff767a024d9]
+	(No symbol) [0x0x7ff767955d55]
+	GetHandleVerifier [0x0x7ff767ea4eed+3061101]
+	GetHandleVerifier [0x0x7ff767e9f33d+3037629]
+	GetHandleVerifier [0x0x7ff767ebe592+3165202]
+	GetHandleVerifier [0x0x7ff767be730e+186766]
+	GetHandleVerifier [0x0x7ff767beeb3f+217535]
+	(No symbol) [0x0x7ff767954dca]
+	GetHandleVerifier [0x0x7ff767fc45e8+4238440]
+	BaseThreadInitThunk [0x0x7ff9d739e8d7+23]
+	RtlUserThreadStart [0x0x7ff9d88ffbcc+44]
+
+2025-07-07 15:47:30,045 \u274c Erro ao enviar mensagem para +5574988214340: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff767bccda5+78885]
+	GetHandleVerifier [0x0x7ff767bcce00+78976]
+	(No symbol) [0x0x7ff7679899fc]
+	(No symbol) [0x0x7ff7679d07df]
+	(No symbol) [0x0x7ff767a08a52]
+	(No symbol) [0x0x7ff767a03413]
+	(No symbol) [0x0x7ff767a024d9]
+	(No symbol) [0x0x7ff767955d55]
+	GetHandleVerifier [0x0x7ff767ea4eed+3061101]
+	GetHandleVerifier [0x0x7ff767e9f33d+3037629]
+	GetHandleVerifier [0x0x7ff767ebe592+3165202]
+	GetHandleVerifier [0x0x7ff767be730e+186766]
+	GetHandleVerifier [0x0x7ff767beeb3f+217535]
+	(No symbol) [0x0x7ff767954dca]
+	GetHandleVerifier [0x0x7ff767fc45e8+4238440]
+	BaseThreadInitThunk [0x0x7ff9d739e8d7+23]
+	RtlUserThreadStart [0x0x7ff9d88ffbcc+44]
+
+2025-07-07 15:50:06,685 \u2705 Mensagem enviada para 5574988214340.0
+2025-07-07 15:51:43,986 \u2705 Mensagem enviada para 5574988214340
+2025-07-07 15:51:52,017 \u2705 Mensagem enviada para 5564992036619
+2025-07-07 15:52:00,703 \u2705 Mensagem enviada para 5522998014657
+2025-07-07 15:52:09,305 \u2705 Mensagem enviada para 5562996969822
+2025-07-07 15:52:17,881 \u2705 Mensagem enviada para 5562996234005
+2025-07-07 15:52:31,621 \u2705 Mensagem enviada para 556299988931
+2025-07-07 15:52:48,315 \u2705 Mensagem enviada para 5562994419339
+2025-07-07 15:53:01,486 \u274c Erro ao enviar mensagem para 5565998030382: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=137.0.7151.120); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff767bccda5+78885]
+	GetHandleVerifier [0x0x7ff767bcce00+78976]
+	(No symbol) [0x0x7ff767989bca]
+	(No symbol) [0x0x7ff7679759b5]
+	(No symbol) [0x0x7ff76799a9ca]
+	(No symbol) [0x0x7ff767a105e5]
+	(No symbol) [0x0x7ff767a30b42]
+	(No symbol) [0x0x7ff767a08963]
+	(No symbol) [0x0x7ff7679d16b1]
+	(No symbol) [0x0x7ff7679d2443]
+	GetHandleVerifier [0x0x7ff767ea4eed+3061101]
+	GetHandleVerifier [0x0x7ff767e9f33d+3037629]
+	GetHandleVerifier [0x0x7ff767ebe592+3165202]
+	GetHandleVerifier [0x0x7ff767be730e+186766]
+	GetHandleVerifier [0x0x7ff767beeb3f+217535]
+	GetHandleVerifier [0x0x7ff767bd59b4+114740]
+	GetHandleVerifier [0x0x7ff767bd5b69+115177]
+	GetHandleVerifier [0x0x7ff767bbc368+10728]
+	BaseThreadInitThunk [0x0x7ff9d739e8d7+23]
+	RtlUserThreadStart [0x0x7ff9d88ffbcc+44]
+
+2025-07-07 15:53:01,494 \u274c Erro ao enviar mensagem para 556284050546: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff767bccda5+78885]
+	GetHandleVerifier [0x0x7ff767bcce00+78976]
+	(No symbol) [0x0x7ff7679899fc]
+	(No symbol) [0x0x7ff7679d07df]
+	(No symbol) [0x0x7ff767a08a52]
+	(No symbol) [0x0x7ff767a03413]
+	(No symbol) [0x0x7ff767a024d9]
+	(No symbol) [0x0x7ff767955d55]
+	GetHandleVerifier [0x0x7ff767ea4eed+3061101]
+	GetHandleVerifier [0x0x7ff767e9f33d+3037629]
+	GetHandleVerifier [0x0x7ff767ebe592+3165202]
+	GetHandleVerifier [0x0x7ff767be730e+186766]
+	GetHandleVerifier [0x0x7ff767beeb3f+217535]
+	(No symbol) [0x0x7ff767954dca]
+	GetHandleVerifier [0x0x7ff767fc45e8+4238440]
+	BaseThreadInitThunk [0x0x7ff9d739e8d7+23]
+	RtlUserThreadStart [0x0x7ff9d88ffbcc+44]
+
+2025-07-07 15:53:01,517 \u274c Erro ao enviar mensagem para 556284050546: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff767bccda5+78885]
+	GetHandleVerifier [0x0x7ff767bcce00+78976]
+	(No symbol) [0x0x7ff7679899fc]
+	(No symbol) [0x0x7ff7679d07df]
+	(No symbol) [0x0x7ff767a08a52]
+	(No symbol) [0x0x7ff767a03413]
+	(No symbol) [0x0x7ff767a024d9]
+	(No symbol) [0x0x7ff767955d55]
+	GetHandleVerifier [0x0x7ff767ea4eed+3061101]
+	GetHandleVerifier [0x0x7ff767e9f33d+3037629]
+	GetHandleVerifier [0x0x7ff767ebe592+3165202]
+	GetHandleVerifier [0x0x7ff767be730e+186766]
+	GetHandleVerifier [0x0x7ff767beeb3f+217535]
+	(No symbol) [0x0x7ff767954dca]
+	GetHandleVerifier [0x0x7ff767fc45e8+4238440]
+	BaseThreadInitThunk [0x0x7ff9d739e8d7+23]
+	RtlUserThreadStart [0x0x7ff9d88ffbcc+44]
+
+2025-07-07 15:53:01,525 \u274c Erro ao enviar mensagem para 556284050546: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff767bccda5+78885]
+	GetHandleVerifier [0x0x7ff767bcce00+78976]
+	(No symbol) [0x0x7ff7679899fc]
+	(No symbol) [0x0x7ff7679d07df]
+	(No symbol) [0x0x7ff767a08a52]
+	(No symbol) [0x0x7ff767a03413]
+	(No symbol) [0x0x7ff767a024d9]
+	(No symbol) [0x0x7ff767955d55]
+	GetHandleVerifier [0x0x7ff767ea4eed+3061101]
+	GetHandleVerifier [0x0x7ff767e9f33d+3037629]
+	GetHandleVerifier [0x0x7ff767ebe592+3165202]
+	GetHandleVerifier [0x0x7ff767be730e+186766]
+	GetHandleVerifier [0x0x7ff767beeb3f+217535]
+	(No symbol) [0x0x7ff767954dca]
+	GetHandleVerifier [0x0x7ff767fc45e8+4238440]
+	BaseThreadInitThunk [0x0x7ff9d739e8d7+23]
+	RtlUserThreadStart [0x0x7ff9d88ffbcc+44]
+
