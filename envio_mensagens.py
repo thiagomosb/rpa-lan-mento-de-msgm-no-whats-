@@ -38,10 +38,10 @@ def normalizar(texto):
 
 def conectar_mariadb():
     return mysql.connector.connect(
-        host='sgddolp.com.br',
-        database='dolpenge_views',
-        user='dolpenge_dolpviews',
-        password='824oZ_0phPt7')
+        host='',
+        database='',
+        user='',
+        password='')
 
 def consultar_inspecoes_detalhadas_por_empresa():
     conn = conectar_mariadb()
@@ -312,3 +312,4 @@ def inicializar_driver():
     driver.get("https://web.whatsapp.com")
     WebDriverWait(driver, 120).until(lambda d: d.find_element(By.XPATH, "//div[@contenteditable='true']"))
     return driver
+
