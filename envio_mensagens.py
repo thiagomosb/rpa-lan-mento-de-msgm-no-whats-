@@ -1,3 +1,4 @@
+import os
 import mysql.connector
 import logging
 from datetime import datetime
@@ -5,6 +6,8 @@ from pathlib import Path
 from time import sleep
 import pyperclip
 import unicodedata
+from urllib.parse import quote_plus
+from dotenv import load_dotenv
 from selenium.webdriver.common.keys import Keys
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -12,6 +15,8 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+
+load_dotenv(Path(__file__).parent / '.env')
 
 log_path = Path(__file__).parent / 'envio_alertas.log'
 logging.basicConfig(filename=log_path, level=logging.INFO, format='%(asctime)s %(message)s')
@@ -36,15 +41,109 @@ def normalizar(texto):
     texto = ''.join(c for c in texto if unicodedata.category(c) != 'Mn')
     return ' '.join(texto.split()).replace("-", " ")
 
-def conectar_mariadb():
-    return mysql.connector.connect(
-        host='',
-        database='',
-        user='',
-        password='')
+def conectar_bd():
+    db_type = os.getenv('DB_TYPE', 'mysql').strip().lower()
+    db_host = os.getenv('DB_HOST', '').strip()
+    db_port = os.getenv('DB_PORT', '').strip()
+    db_name = os.getenv('DB_NAME', '').strip()
+    db_user = os.getenv('DB_USER', '').strip()
+    db_password = os.getenv('DB_PASSWORD', '').strip()
+    db_service_name = os.getenv('DB_SERVICE_NAME', '').strip()
+
+    if db_type in ('mysql', 'mariadb'):
+        conn_args = {
+            'host': db_host,
+            'user': db_user,
+            'password': db_password,
+            'database': db_name
+        }
+        if db_port:
+            conn_args['port'] = int(db_port)
+        return mysql.connector.connect(**conn_args)
+
+    if db_type in ('oracle', 'oracledb'):
+        import oracledb
+        port = int(db_port) if db_port else 1521
+        if db_service_name:
+            dsn = oracledb.makedsn(db_host, port, service_name=db_service_name)
+        else:
+            dsn = oracledb.makedsn(db_host, port, sid=db_name)
+        return oracledb.connect(dsn=dsn, user=db_user, password=db_password)
+
+    raise ValueError(f"DB_TYPE desconhecido: {db_type}. Use mysql, mariadb, oracle ou oracledb.")
+
+def consultar_comunica_recursos_pendentes():
+    conn = conectar_bd()
+    cursor = conn.cursor()
+    cursor.execute("""
+        SELECT ID,
+               REGIONAL,
+               TIPO_DE_EQUIPE,
+               OCORRENCIA,
+               AFETACAO,
+               CONTROLADOR,
+               DATA_SOLICITACAO,
+               TIPO_DE_NOTA,
+               INFORMACAO_CONTROLADOR,
+               ROUND(
+                   (CAST(SYSDATE AS DATE) - CAST(DATA_SOLICITACAO AS DATE)) * 1440,
+                   2
+               ) AS TEMPO_MINUTOS
+        FROM COMUNICA_RECURSOS
+        WHERE 1=1
+          AND ((CAST(SYSDATE AS DATE) - CAST(DATA_SOLICITACAO AS DATE)) * 1440) > 10
+          AND STATUS NOT IN ('Aceitar')
+    """)
+    raw_resultados = cursor.fetchall()
+    resultados = []
+    for row in raw_resultados:
+        resultados.append(tuple(
+            col.read() if hasattr(col, 'read') else col
+            for col in row
+        ))
+    cursor.close()
+    conn.close()
+    return resultados
+
+def agrupar_pendentes_por_regional(pendentes):
+    pendentes_por_regional = {'GO': [], 'TO': [], 'MT': []}
+    for row in pendentes:
+        regional = str(row[1] or '').upper()
+        if 'GO' in regional:
+            pendentes_por_regional['GO'].append(row)
+        elif 'TO' in regional:
+            pendentes_por_regional['TO'].append(row)
+        elif 'MT' in regional:
+            pendentes_por_regional['MT'].append(row)
+        else:
+            for chave in pendentes_por_regional:
+                pendentes_por_regional[chave].append(row)
+    return pendentes_por_regional
+
+def formatar_mensagem_comunica_recursos(grupo, pendentes):
+    if not pendentes:
+        return [f"{grupo}\n\n✅ Nenhuma comunicação pendente no COMUNICA_RECURSOS (> 10 min)."]
+
+    mensagens = []
+    for id_, regional, tipo_equipe, ocorrencia, afetacao, controlador, data_solicitacao, tipo_nota, informacao_controlador, tempo_minutos in pendentes:
+        mensagem = f"{grupo}\n\n"
+        mensagem += "🚨 Comunicação pendente no COMUNICA_RECURSOS (> 10 min)\n\n"
+        mensagem += f"ID: {id_}\n"
+        mensagem += f"Regional: {regional}\n"
+        mensagem += f"Tipo de equipe: {tipo_equipe}\n"
+        mensagem += f"Ocorrência: {ocorrencia}\n"
+        mensagem += f"Afetação: {afetacao}\n"
+        mensagem += f"Controlador: {controlador}\n"
+        mensagem += f"Data solicitação: {data_solicitacao}\n"
+        mensagem += f"Tipo de nota: {tipo_nota}\n"
+        mensagem += f"Informação controlador: {informacao_controlador}\n"
+        mensagem += f"Tempo (minutos): {tempo_minutos}\n\n"
+        mensagem += "💬 Mensagem preparada pelo robô 🤖"
+        mensagens.append(mensagem.strip())
+    return mensagens
 
 def consultar_inspecoes_detalhadas_por_empresa():
-    conn = conectar_mariadb()
+    conn = conectar_bd()
     cursor = conn.cursor()
     cursor.execute("""
         SELECT t.nom_fant, p.nome, p.funcao_geral, COUNT(DISTINCT b.idtb_turnos) AS total_inspecoes
@@ -79,7 +178,7 @@ def consultar_inspecoes_detalhadas_por_empresa():
 
     return empresas
 def calcular_taxa_contato_detalhada_por_unidade(empresa):
-    conn = conectar_mariadb()
+    conn = conectar_bd()
     cursor = conn.cursor()
 
     # Todas as equipes por unidade
@@ -131,11 +230,10 @@ def calcular_taxa_contato_detalhada_por_unidade(empresa):
 
 
 def calcular_taxa_contato(empresa):
-    conn = conectar_mariadb()
+    conn = conectar_bd()
     cursor = conn.cursor()
 
     cursor.execute("""
-        SELECT DISTINCT num_operacional
         FROM view_power_bi_turnos
         WHERE nom_fant = %s
           AND YEAR(dt_inicio) = YEAR(CURRENT_DATE)
@@ -162,7 +260,7 @@ def calcular_taxa_contato(empresa):
     return round(taxa_contato, 2), len(inspecionadas), len(nao_inspecionadas), list(inspecionadas), list(nao_inspecionadas)
 
 def consultar_indicadores_gerais_por_empresa(empresa):
-    conn = conectar_mariadb()
+    conn = conectar_bd()
     cursor = conn.cursor()
 
     cursor.execute("""
@@ -210,92 +308,40 @@ def consultar_indicadores_gerais_por_empresa(empresa):
     return total_inspecoes, taxa_contato, total_ncs, top_subgrupos, total_inspecionadas, total_nao_inspecionadas, lista_inspecionadas, lista_nao_inspecionadas
 
 def gerar_mensagens_por_grupo():
-    agora = datetime.now()
-    empresas = consultar_inspecoes_detalhadas_por_empresa()
-    mensagens_por_empresa = {}
-
-    meses_pt = {
-        1: "Janeiro", 2: "Fevereiro", 3: "Março", 4: "Abril",
-        5: "Maio", 6: "Junho", 7: "Julho", 8: "Agosto",
-        9: "Setembro", 10: "Outubro", 11: "Novembro", 12: "Dezembro"
-    }
-
-    for empresa, detalhes in empresas.items():
-        meta_sesmt = METAS_POR_EMPRESA.get(empresa, {}).get('SESMT', META_SESMT_DEFAULT)
-        meta_supervisores = METAS_POR_EMPRESA.get(empresa, {}).get('SUPERVISORES', META_SUPERVISORES_DEFAULT)
-
-        total_inspecoes, taxa_contato, total_ncs, top_subgrupos, total_inspecionadas, total_nao_inspecionadas, lista_inspecionadas, lista_nao_inspecionadas = consultar_indicadores_gerais_por_empresa(empresa)
-
-        mensagem = f"{empresa}\n\n"
-        mensagem += f"📅 Indicadores Mensais ({meses_pt[agora.month]}/{agora.year})\n\n"
-        mensagem += f"✅ Inspeções realizadas: {total_inspecoes}\n"
-        mensagem += f"📈 Taxa de Contato: {taxa_contato}%\n"
-        mensagem += f"🛻 Equipes inspecionadas: {total_inspecionadas}\n"
-        mensagem += f"❌ Equipes não inspecionadas: {total_nao_inspecionadas}\n\n"
-        mensagem += f"🚨 Não conformidades (NCs): {total_ncs}\n"
-        mensagem += "🔝 Subgrupos com mais reprovações:\n"
-        for idx, (subgrupo, qtd) in enumerate(top_subgrupos, start=1):
-            mensagem += f"{idx}. {subgrupo} ({qtd})\n"
-
-        mensagem += "\n👷‍♂️ SESMT:\n"
-        for nome, total in detalhes['sesmt']:
-            status = "✅" if total >= meta_sesmt else "❌"
-            mensagem += f"- {nome}: {total}/{meta_sesmt} {status}\n"
-
-        mensagem += "\n🧑‍💼 SUPERVISORES:\n"
-        for nome, total in detalhes['supervisores']:
-            status = "✅" if total >= meta_supervisores else "❌"
-            mensagem += f"- {nome}: {total}/{meta_supervisores} {status}\n"
-
-        mensagem += "\n\n✅ Equipes inspecionadas (por unidade):\n"
-        detalhes_unidades = calcular_taxa_contato_detalhada_por_unidade(empresa)
-        for unidade, dados in detalhes_unidades.items():
-            if dados['inspecionadas']:
-                equipes = ", ".join(dados['inspecionadas'])
-                mensagem += f"- {unidade} ({dados['taxa']}%): {equipes}\n"
-
-        mensagem += "\n\n❌ Equipes não inspecionadas (por unidade):\n"
-        for unidade, dados in detalhes_unidades.items():
-            if dados['nao_inspecionadas']:
-                equipes = ", ".join(dados['nao_inspecionadas'])
-                mensagem += f"- {unidade} : {equipes}\n"
-
-
-        mensagem += "\n\n💬 Mensagem enviada via robô 🤖"
-        mensagens_por_empresa[empresa] = mensagem.strip()
+    pendentes_comunica = consultar_comunica_recursos_pendentes()
+    pendentes_por_regional = agrupar_pendentes_por_regional(pendentes_comunica)
 
     mensagens_por_grupo = {}
-    for grupo, empresas_grupo in empresas_por_grupo.items():
-        mensagens = []
-        for emp_grupo in empresas_grupo:
-            for emp_nome in mensagens_por_empresa:
-                if normalizar(emp_nome) == normalizar(emp_grupo):
-                    mensagens.append(mensagens_por_empresa[emp_nome])
-                    break
-        mensagens_por_grupo[grupo] = "\n\n".join(mensagens) if mensagens else "⚠️ Nenhuma informação disponível no Banco de dados."
+    for grupo in empresas_por_grupo:
+        mensagens_por_grupo[grupo] = formatar_mensagem_comunica_recursos(grupo, pendentes_por_regional.get(grupo, []))
     return mensagens_por_grupo
 
 def enviar_mensagem_whatsapp(numero, mensagem, driver):
     try:
-        pyperclip.copy(mensagem)
-        driver.get(f"https://web.whatsapp.com/send?phone={numero}&text&app_absent=0")
+        mensagem_url = quote_plus(mensagem)
+        driver.get(f"https://web.whatsapp.com/send?phone={numero}&text={mensagem_url}&app_absent=0")
 
-        # Espera o campo aparecer
-        campo = WebDriverWait(driver, 90).until(
-            EC.presence_of_element_located((By.XPATH, '//*[@id="main"]/footer/div[1]/div/span/div/div[2]/div[1]/div[2]/div[1]/p'))
+        # Espera carregar a lateral de contatos/nome (apenas para garantir que o app está pronto)
+        WebDriverWait(driver, 90).until(
+            EC.presence_of_element_located((By.XPATH, "//*[@id='side']/div[1]/div/div/div/div/div/div"))
         )
 
-        WebDriverWait(driver, 90).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="main"]/footer/div[1]/div/span/div/div[2]/div[1]/div[2]/div[1]/p')))
+        # Espera o campo de mensagem aparecer
+        campo = WebDriverWait(driver, 90).until(
+            EC.element_to_be_clickable((By.XPATH, "//*[@id='main']/footer/div[1]/div/span/div/div/div/div[3]/div[1]/p"))
+        )
         campo.click()
         sleep(1)
 
-        # Cola a mensagem
+        pyperclip.copy(mensagem)
         campo.send_keys(Keys.CONTROL, 'v')
         sleep(1)
 
-        # Pressiona Enter para enviar
-        campo.send_keys(Keys.ENTER)
-        sleep(2)  # aguarda o envio
+        botao_enviar = WebDriverWait(driver, 90).until(
+            EC.element_to_be_clickable((By.XPATH, "//*[@id='main']/footer/div[1]/div/span/div/div/div/div[4]/div/span/button/div/div/div[1]/span"))
+        )
+        botao_enviar.click()
+        sleep(2)
         logging.info(f"✅ Mensagem enviada para {numero}")
 
     except Exception as e:
@@ -305,9 +351,11 @@ def enviar_mensagem_whatsapp(numero, mensagem, driver):
 
 def inicializar_driver():
     options = Options()
-    options.add_argument("--user-data-dir=C:/Temp/.selenium_whatsapp_profile")
+    whatsapp_profile_dir = os.getenv('WHATSAPP_PROFILE_DIR', 'C:/Temp/.selenium_whatsapp_profile')
+    chrome_binary_path = os.getenv('CHROME_BINARY_PATH', r'C:/Program Files/Google/Chrome/Application/chrome.exe')
+    options.add_argument(f"--user-data-dir={whatsapp_profile_dir}")
     options.add_argument("--start-maximized")
-    options.binary_location = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
+    options.binary_location = chrome_binary_path
     driver = webdriver.Chrome(options=options)
     driver.get("https://web.whatsapp.com")
     WebDriverWait(driver, 120).until(lambda d: d.find_element(By.XPATH, "//div[@contenteditable='true']"))

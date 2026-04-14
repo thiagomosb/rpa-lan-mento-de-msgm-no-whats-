@@ -7,13 +7,26 @@ import os
 
 
 csv_path = "contatos.csv"
+DEFAULT_CONTATO = {
+    "nome": "Thiago",
+    "funcao": "OUTROS",
+    "unidade": "MORRINHOS",
+    "numero": "+5574988214340",
+    "grupo": "DOLP ENGENHARIA - GO"
+}
 
 # Carrega contatos do CSV
 if "contatos" not in st.session_state:
-    if os.path.exists(csv_path):
-        st.session_state.contatos = pd.read_csv(csv_path).to_dict(orient="records")
-    else:
-        st.session_state.contatos = []
+    contatos = []
+    if os.path.exists(csv_path) and os.path.getsize(csv_path) > 0:
+        try:
+            contatos = pd.read_csv(csv_path).to_dict(orient="records")
+        except Exception:
+            contatos = []
+    if not contatos:
+        contatos = [DEFAULT_CONTATO]
+        pd.DataFrame(contatos).to_csv(csv_path, index=False)
+    st.session_state.contatos = contatos
 
 if "mostrar_lista" not in st.session_state:
     st.session_state.mostrar_lista = False
@@ -107,9 +120,10 @@ if st.session_state.contatos:
             grupo = contato["grupo"]
             numero = contato["numero"]
             chave_grupo = grupo.split("-")[-1].strip()
-            mensagem = mensagens.get(chave_grupo, "⚠️ Nenhuma mensagem disponível.")
-            st.write(f"Enviando para {contato['nome']} ({numero})...")
-            enviar_mensagem_whatsapp(numero, mensagem, driver)
+            lista_mensagens = mensagens.get(chave_grupo, ["⚠️ Nenhuma mensagem disponível."])
+            st.write(f"Enviando {len(lista_mensagens)} mensagens para {contato['nome']} ({numero})...")
+            for mensagem in lista_mensagens:
+                enviar_mensagem_whatsapp(numero, mensagem, driver)
 
         driver.quit()
         st.success("✅ Mensagens enviadas com sucesso.")
